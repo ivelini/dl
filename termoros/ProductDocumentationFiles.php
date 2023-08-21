@@ -106,7 +106,7 @@ class ProductDocumentationFiles extends Command
                 $fileIsExist = false;
                 $documentationFiles->map(function($item) use ($file, $itemsXml, $fileIsExist) {
 
-                  if ($item['id'] == $itemsXml['Id']) {
+                  if (!empty($item['id']) && $item['id'] == $itemsXml['Id']) {
 
                     $fileIsExist = true;
                     return $file;
